@@ -1,0 +1,55 @@
+/* Showcase container with a black background */
+.showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden;
+    perspective: 1000px;
+    background-color: #000; /* Black background */
+}
+
+/* Carousel setup with unchanged styles */
+.carousel {
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+/* Carousel items with a vibrant look */
+.carousel-item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+    transition: transform 0.5s;
+    cursor: pointer;
+    color: #fff; /* Ensuring text stands out against the dark background */
+}
+
+.carousel-item:hover {
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px) scale(1.2);
+}
+
+/* Style for the images inside carousel items */
+.carousel-item img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Slight white shadow to make the images pop */
+}
+
+/* Rotate animation */
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}

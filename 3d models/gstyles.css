@@ -1,0 +1,57 @@
+/* Cyber Grid container with dark theme and glowing effects */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #111; /* Dark background */
+    height: 100vh;
+    place-items: center;
+}
+
+/* Individual grid items with glowing border */
+.grid-item {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Glowing border on hover */
+.grid-item:hover {
+    border-color: #0ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 60px #00f;
+}
+
+/* Content inside grid items */
+.grid-item h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #00f;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    color: #aaa;
+    text-shadow: 0 0 5px #aaa;
+}
+
+/* Animated background effect */
+body {
+    background: linear-gradient(135deg, #1b1b1b 25%, #101010 75%);
+    animation: backgroundShift 15s infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}

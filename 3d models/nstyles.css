@@ -1,0 +1,77 @@
+/* Neon Container with a dark background */
+.neon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #111; /* Dark background to enhance neon effects */
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Neon Title with glowing effect */
+.neon-title {
+    font-size: 4rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #00f;
+    margin-bottom: 20px;
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Neon description with glow */
+.neon-description {
+    font-size: 1.5rem;
+    color: #f0f;
+    text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f, 0 0 40px #f0f;
+    margin-bottom: 40px;
+}
+
+/* Neon Button with hover animation */
+.neon-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: none;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, #0ff 10%, transparent 20%);
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.neon-button:hover::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.neon-button:hover {
+    color: #0ff;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    transform: scale(1.05);
+}
+
+/* Neon pulse animation */
+@keyframes neonPulse {
+    from {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    }
+    to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #00f, 0 0 100px #00f;
+    }
+}
